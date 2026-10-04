@@ -6,7 +6,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section aria-labelledby="como-t" className="mx-auto max-w-[1280px] px-6 pb-30 pt-25">
+    <section aria-labelledby="como-t" className="mx-auto max-w-[1280px] px-6 pb-16 md:pb-30 pt-12 md:pt-25">
       <div className="mb-4 text-sm tracking-[0.2em] text-muted">02 / COMO FUNCIONA</div>
       <h2 id="como-t" className="m-0 mb-14 font-display text-[clamp(44px,6vw,88px)] font-bold leading-[0.9] tracking-[-0.04em] text-accent">
         Três carimbos até a fluência

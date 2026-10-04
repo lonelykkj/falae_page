@@ -2,7 +2,7 @@ import { courses } from '@/data/courses'
 
 export default function Courses() {
   return (
-    <section id="cursos" aria-labelledby="cursos-t" className="mx-auto max-w-[1280px] px-6 pb-10 pt-30">
+    <section id="cursos" aria-labelledby="cursos-t" className="mx-auto max-w-[1280px] px-6 pb-10 pt-16 md:pt-30">
       <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
         <div>
           <div className="mb-4 text-sm tracking-[0.2em] text-muted">01 / CURSOS</div>
@@ -34,9 +34,9 @@ export default function Courses() {
                 <span className="text-[13px] text-muted">{c.no}</span>
               </div>
               <p className="m-0 text-sm leading-[1.6] text-body">
-                Níveis {c.levels} · [DURAÇÃO DO MÓDULO]
+                Níveis {c.levels} · módulo de {c.duration}
                 <br />
-                Turmas de até [Nº] alunos
+                Turmas de até {c.classSize} alunos
               </p>
               <a href="#planos" className="inline-flex min-h-11 items-center text-[15px] font-bold">
                 Ver turmas →

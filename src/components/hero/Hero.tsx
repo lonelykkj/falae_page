@@ -7,6 +7,19 @@ const display = "'Archivo', sans-serif"
 export default function Hero() {
   return (
     <section id="topo" aria-label="Destaque" className="relative">
+      <div className="mx-auto max-w-[1280px] px-6 pb-2 pt-2 text-center">
+        <p className="m-0 mx-auto max-w-[900px] text-[clamp(20px,2.6vw,32px)] leading-[1.35] text-ink">
+          <strong className="font-bold">Fale com o mundo.</strong> Aprenda um idioma como quem viaja, em turmas ao vivo de até 8 alunos.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="#nivel" className="btn inline-flex min-h-[52px] items-center rounded-full bg-accent px-7 text-base font-bold text-ink no-underline hover:text-ink">
+            Fazer teste de nível
+          </a>
+          <a href="#cursos" className="btn inline-flex min-h-[52px] items-center rounded-full border-2 border-ink px-7 text-base font-bold text-ink no-underline hover:text-ink">
+            Ver cursos →
+          </a>
+        </div>
+      </div>
       <div className="relative mx-auto max-w-[1280px] aspect-[1280/980] [container-type:inline-size]">
         <div aria-hidden="true" className="absolute bottom-0 left-[calc(50%-50vw)] z-0 h-[33%] w-screen bg-accent" />
 
@@ -57,7 +70,7 @@ export default function Hero() {
 
         {/* E · Japonês */}
         <Polaroid d="1.05s" f="8.5s" left="64%" top="33%" width={31} side={1} bottom={2.4} rotate="-3deg" shadow={0.24} z={3}
-          photoHeight={18} photoBg="#EBC8A2" caption="Nº 07 — JAPONÊS · Quioto" captionBottom={0.6}>
+          photoHeight={18} photoBg="#EBC8A2" caption="Nº 06 — JAPONÊS · Quioto" captionBottom={0.6}>
           <div style={abs({ left: '3cqw', bottom: 0, width: 0, height: 0, borderLeft: '11cqw solid transparent', borderRight: '11cqw solid transparent', borderBottom: '11cqw solid #6E7FA0' })} />
           <div style={abs({ left: '10.7cqw', bottom: '7.5cqw', width: 0, height: 0, borderLeft: '3.4cqw solid transparent', borderRight: '3.4cqw solid transparent', borderBottom: '3.5cqw solid #F6F1E6' })} />
           <div style={abs({ left: 0, right: 0, bottom: 0, height: '3cqw', background: '#B6402C' })} />

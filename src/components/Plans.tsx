@@ -1,5 +1,6 @@
 interface Plan {
   name: string
+  price: string
   unit: string
   items: string[]
   cta: string
@@ -9,16 +10,16 @@ interface Plan {
 }
 
 const plans: Plan[] = [
-  { name: 'BILHETE AVULSO', unit: '/aula', items: ['Aula particular de 50 min', 'Horário flexível', 'Qualquer idioma'], cta: 'Comprar bilhete', rot: '-2deg' },
-  { name: 'PASSE MENSAL', unit: '/mês', items: ['2 aulas ao vivo por semana', 'Clube de conversação', 'Material digital incluso'], cta: 'Começar agora', badge: 'MAIS ESCOLHIDO', dark: true, rot: '1.5deg' },
-  { name: 'PASSAPORTE ANUAL', unit: '/ano', items: ['Tudo do passe mensal', 'Troque de idioma quando quiser', 'Certificado por nível'], cta: 'Garantir passaporte', rot: '-1deg' },
+  { name: 'BILHETE AVULSO', price: 'R$ 89', unit: '/aula', items: ['Aula particular de 50 min', 'Horário flexível', 'Qualquer idioma'], cta: 'Comprar bilhete', rot: '-2deg' },
+  { name: 'PASSE MENSAL', price: 'R$ 389', unit: '/mês', items: ['2 aulas ao vivo por semana', 'Clube de conversação', 'Material digital incluso'], cta: 'Começar agora', badge: 'MAIS ESCOLHIDO', dark: true, rot: '1.5deg' },
+  { name: 'PASSAPORTE ANUAL', price: 'R$ 3.490', unit: '/ano', items: ['Tudo do passe mensal', 'Troque de idioma quando quiser', 'Certificado por nível'], cta: 'Garantir passaporte', rot: '-1deg' },
 ]
 
 export default function Plans() {
   return (
-    <section id="planos" aria-labelledby="planos-t" className="bg-accent px-6 pb-32 pt-[110px]">
+    <section id="planos" aria-labelledby="planos-t" className="bg-accent px-6 pb-20 pt-16 md:pb-32 md:pt-[110px]">
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-4 text-sm tracking-[0.2em] text-cream">03 / PLANOS</div>
+        <div className="mb-4 text-sm tracking-[0.2em] text-cream">04 / PLANOS</div>
         <h2 id="planos-t" className="m-0 mb-14 font-display text-[clamp(44px,6vw,88px)] font-bold leading-[0.9] tracking-[-0.04em] text-cream">
           Escolha sua passagem
         </h2>
@@ -40,7 +41,7 @@ export default function Plans() {
                 )}
               </div>
               <div className="font-display text-[44px] font-extrabold tracking-[-0.03em]">
-                [PREÇO]
+                {p.price}
                 <span className="font-sans text-[15px] font-normal tracking-normal"> {p.unit}</span>
               </div>
               <div className={`border-t-2 border-dashed ${p.dark ? 'border-[#5A4F44]' : 'border-[#B9AE9C]'}`} />
