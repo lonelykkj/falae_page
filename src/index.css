@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Mono", ui-monospace, monospace;
+  --font-display: "Archivo", sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --color-accent: #e8552a;
+  --color-paper: #ece7de;
+  --color-ink: #1e1814;
+  --color-cream: #fbf6ec;
+  --color-card: #f5f0e5;
+  --color-stamp: #f6f1e6;
+  --color-muted: #6b5f52;
+  --color-body: #3a3129;
+  --color-link: #a93a0e;
+  --color-link-hover: #7a2908;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: var(--color-paper);
+  }
+  a {
+    color: var(--color-link);
+  }
+  a:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+@keyframes drop {
+  from { opacity: 0; translate: 0 -18cqw; }
+  55% { opacity: 1; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -0.8cqw; }
+}
+@keyframes rise {
+  from { opacity: 0; translate: 0 0.4em; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes tick {
+  to { translate: -50% 0; }
+}
+@keyframes wob {
+  25% { rotate: -7deg; }
+  75% { rotate: 7deg; }
+}
+@keyframes reveal {
+  from { opacity: 0; scale: 0.92; }
+  to { opacity: 1; scale: 1; }
+}
+
+.drop {
+  animation:
+    drop 1s cubic-bezier(0.2, 0.9, 0.3, 1.15) var(--d, 0s) backwards,
+    float var(--f, 7s) ease-in-out calc(var(--d, 0s) + 1s) infinite;
+  transition: scale 0.35s ease;
+}
+.drop:hover { scale: 1.05; z-index: 20 !important; }
+.rise {
+  display: inline-block;
+  animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s) backwards;
+}
+.ticker { animation: tick 38s linear infinite; }
+.lift { transition: translate 0.35s ease, rotate 0.35s ease, box-shadow 0.35s ease; }
+.lift:hover {
+  translate: 0 -10px;
+  rotate: 0deg !important;
+  box-shadow: 0 26px 44px rgba(50, 30, 10, 0.22) !important;
+}
+.wobble:hover { animation: wob 0.5s ease-in-out; }
+.btn { transition: translate 0.2s ease; }
+.btn:hover { translate: 0 -3px; }
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Selo postal com borda serrilhada */
+.perf-lg { background: radial-gradient(circle, transparent 0 4px, var(--color-stamp) 4.5px) -6px -6px / 12px 12px; }
+.perf-sm { background: radial-gradient(circle, transparent 0 2.5px, var(--color-cream) 3px) -4px -4px / 8px 8px; }
